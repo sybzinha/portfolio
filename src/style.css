@@ -1,0 +1,271 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: url('./images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+  }
+  
+  #desktop {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    height: calc(100vh - 50px); /* Ajusta para não sobrepor a barra de tarefas */
+  }
+  
+  .icon {
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .icon img {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .icon p {
+    margin-top: 5px;
+  }
+
+  /* Adiciona estilo para o ícone selecionado */
+.icon.selected {
+    background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo para mostrar que está selecionado */
+    border-radius: 5px;
+    transform: scale(1.10);  /* Aumenta o tamanho do ícone */
+    transition: transform 0.3s ease-in-out; /* Suaviza a animação */
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); /* Sombra para dar um efeito de foco */
+    overflow: hidden;  /* Limita a sombra ao tamanho do ícone */
+    max-height: 100px;
+  }
+  
+  /* Estilo adicional para o texto quando o ícone é selecionado */
+  .icon.selected p {
+    font-weight: bold;
+    color: white; /* Cor do texto ao ser selecionado */
+  }
+
+  .modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  #close-btn {
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  /* Modal */
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo translúcido */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  #close-btn {
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  /* Estilo do título do modal */
+  .modal h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Container para os projetos */
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsivo */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .project {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: scale(1.05);
+  }
+  
+  .project img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .project-info {
+    padding: 10px;
+  }
+  
+  .project-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .project-info p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .project-info a {
+    text-decoration: none;
+    color: #0047AB;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .project-info a:hover {
+    text-decoration: underline;
+  }
+  
+  #taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center;     /* Alinha os itens verticalmente no centro */
+    padding: 0 10px;
+  }
+  
+  #start-menu {
+    display: flex;
+    align-items: center;
+    margin-right: 550px; /* Espaçamento entre o menu Iniciar e outros itens */
+  }
+  
+  #start-menu img {
+    width: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  #start-menu input {
+    width: 270px;
+    padding: 5px;
+    border: none;
+    height: 50px;
+    background-image: url('./icons/search.png'); /* Caminho da imagem do ícone de pesquisa */
+    background-position: 12px center; /* Alinha a imagem à esquerda dentro do campo */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-size: 16px 16px; /* Tamanho do ícone de pesquisa */
+    padding-left: 40px; /* Cria um espaço à esquerda para a imagem */
+  }
+
+  #start-menu input::placeholder {
+    font-size: 15px; /* Ajuste o tamanho do texto conforme necessário */
+    color: rgb(77, 74, 74);
+  }
+  
+  #pinned-apps img {
+    width: 30px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#pinned-apps {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Espaçamento entre os apps fixados e outros itens */
+  }
+  
+  #system-tray {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinha o player de música à direita */
+    flex-grow: 1; /* Garante que o relógio ocupe o espaço restante */
+}
+   
+#clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Alinha o conteúdo horizontalmente ao centro */
+    justify-content: center; /* Alinha o conteúdo verticalmente ao centro */
+    color: rgb(202, 195, 195);
+    margin-right: 8px; /* Adiciona espaçamento entre o relógio e o player de música */
+    margin-left: 2.5pc;
+    height: 50px;  /* Define altura fixa para o relógio */
+}
+
+#time {
+    font-size: 13.5px;
+    text-align: center;  /* Alinha o texto da hora ao centro */
+}
+
+#date {
+  font-size: 13px;
+  color: rgb(202, 195, 195);
+}
+  
+#music-player {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Empurra o player para a extrema direita */
+}
+  
+#play-pause {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+  
+#music-volume {
+    width: 150px;
+    height: 2px;
+}
+  

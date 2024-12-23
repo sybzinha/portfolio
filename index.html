@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Sybilla</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <!-- Área do Desktop -->
+  <div id="desktop">
+    <div class="icon selected" data-app="linkedin">
+      <img src="./src/icons/linkedin.png" alt="Linkedin">
+      <p>Linkedin</p>
+    </div>
+    <div class="icon selected" data-app="portfolio">
+      <img src="./src/icons/folder.png" alt="Portfólio">
+      <p>Portfólio</p>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div id="portfolio-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-btn">&times;</span>
+      <h2>Meu Portfólio</h2>
+      <div class="portfolio-container">
+        <!-- Projeto 1 -->
+        <div class="project">
+          <img src="../curriculo/img.jpg" alt="Projeto 1">
+          <div class="project-info">
+            <h3>Currículo</h3>
+            <p></p>
+            <a href="../curriculo/curriculo.pdf" target="_blank">Ver Currículo</a>
+          </div>
+        </div>
+  
+        <!-- Projeto 2 -->
+        <div class="project">
+          <img src="../drop_reminder/scr/printproject.png" alt="Projeto 2">
+          <div class="project-info">
+            <h3>Drop Reminder</h3>
+            <p>O Drop Reminder é um simulador interativo de consumo de água, desenvolvido para ajudar os usuários a monitorar sua ingestão diária de líquidos. O sistema permite calcular a quantidade recomendada de água com base no peso do usuário e acompanha o progresso, preenchendo visualmente um copo conforme o consumo é registrado.</p>
+            <a href="../drop_reminder/index.html" target="_blank">Ver Projeto</a>
+          </div>
+        </div>
+        
+  
+        <!-- Adicione mais projetos conforme necessário -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de Tarefas -->
+  <div id="taskbar">
+    <div id="start-menu">
+      <img src="./src/icons/windows.png" alt="Start" id="windows-icon">
+      <input type="text" placeholder="Pesquisar">
+    </div>
+    <div id="pinned-apps">
+      <img src="./src/icons/folder.png" alt="Pastas">
+      <img src="./src/icons/spotify.png" alt="Spotify">
+      <img src="./src/icons/opera.png" alt="Opera">
+    </div>
+    <div id="system-tray">
+        <audio id="audio-player" src="./src/mp3/Daniel Paterok - Serenity - Pianoramix.mp3" loop></audio>
+        <img id="play-pause" src="./src/icons/play.png" alt="Play/Pause">
+        <input type="range" min="0" max="100" id="music-volume" value="50">
+        </div>
+        <div id="clock">
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+
+  <!-- Scripts -->
+  <script src="./scripts.js"></script>
+</body>
+</html>
